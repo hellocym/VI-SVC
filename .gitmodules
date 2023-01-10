@@ -16,3 +16,6 @@
 [submodule "spk"]
 	path = spk
 	url = https://github.com/PlayVoice/VI-Speaker
+[submodule "VI-Speaker"]
+	path = VI-Speaker
+	url = https://github.com/PlayVoice/VI-Speaker.git
