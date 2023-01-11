@@ -17,8 +17,8 @@ if __name__ == "__main__":
         alls.append(message)
     fo.close()
 
-    valids = alls[:200]
-    trains = alls[200:]
+    valids = alls[:1]
+    trains = alls[1:]
 
     random.shuffle(trains)
 
