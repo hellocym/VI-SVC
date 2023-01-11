@@ -7,12 +7,17 @@ import joblib
 
 
 from fairseq import checkpoint_utils
+from huggingface_hub import snapshot_download
 
 device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
 
 # https://github.com/TencentGameMate/chinese_speech_pretrain
-model_path = "./chinese-hubert-base.pt"
-kmeans_model_path = "./hubert_kmeans/hubert_base_iter2_32gpu_l9/model.mdl"  # layer 9
+snapshot_download(repo_id="TencentGameMate/chinese-hubert-base", 
+ignore_regex=["*.gitattributes", "*.md", "*.bin"],
+cache_dir='.')
+
+model_path = "./models--TencentGameMate--chinese-hubert-base/snapshots/fce0375452b1dd6c080ac3248d423d4d037bc831/chinese-hubert-base-fairseq-ckpt.pt"
+kmeans_model_path = "./chinese_speech_pretrain/hubert_kmeans/hubert_base_iter2_32gpu_l9/model.mdl"  # layer 9
 
 
 # wave must be 16k, hop_size=320
