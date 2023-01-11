@@ -3,7 +3,7 @@ import random
 if __name__ == "__main__":
 
     alls = []
-    fo = open("./filelists/vits_file.txt", "r+")
+    fo = open("./filelists/vc_file.txt", "r+")
     while True:
         try:
             message = fo.readline().strip()
