@@ -57,7 +57,8 @@ outPath = "data/phone"
 
 for spks in os.listdir(wavPath):
     if os.path.isdir(f"./{wavPath}/{spks}"):
-        os.makedirs(f"./{outPath}/{spks}")
+        if not os.path.exists(f"./{outPath}/{spks}"):
+            os.makedirs(f"./{outPath}/{spks}")
         for file in os.listdir(f"./{wavPath}/{spks}"):
             if file.endswith(".wav"):
                 wav_path = f"./{wavPath}/{spks}/{file}"
